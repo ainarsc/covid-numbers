@@ -1,27 +1,21 @@
 import React from 'react';
 import styled from 'styled-components'
 import {COLOR_BACKGROUND, COLOR_TEXT_DARK} from './constants'
-import NavBar from './nav-bar'
-import ContentSection from './content-section'
-import Footer from './footer'
 
 const Wrapper = styled.div`
     background-color: ${COLOR_BACKGROUND};
-    height: 100vh;
     display: flex;
+    flex: 1;
     flex-direction: column;
-    align-content: stretch;
     color: ${COLOR_TEXT_DARK};
 `
 
-const Dashboard = () => {
+const ContentSection = () => {
     return (
         <Wrapper>
-            <NavBar/>
-           <ContentSection />
-           <Footer/>
+            <div>FOO</div>
         </Wrapper>
     );
 }
 
-export default Dashboard;
+export default ContentSection;
