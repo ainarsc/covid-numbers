@@ -3,13 +3,14 @@ import styled from 'styled-components'
 import {COLOR_BACKGROUND} from './constants'
 import Totals from './data_components/totals'
 import Rank from './data_components/rank'
-import Charts from './data_components/charts'
+import ChartCol from './data_components/ChartCol'
 
 const Wrapper = styled.div`
     background-color: ${COLOR_BACKGROUND};
     display: flex;
     flex: 1;
     flex-direction: column;
+    margin: 5px;
 `
 const TopRow = styled.div`
     display: flex;
@@ -33,7 +34,8 @@ const ContentSection = () => {
             </TopRow>
             <BottomRow>
                 <Rank />
-                <Charts />
+                <ChartCol />
+                <ChartCol />
             </BottomRow>
         </Wrapper>
     );

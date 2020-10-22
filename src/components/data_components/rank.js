@@ -6,7 +6,7 @@ const Wrapper = styled.div`
     display: flex;
     flex: 2;
     flex-direction: column;
-    margin: 5px
+    margin: 5px;
 `
 
 const Item = styled.div`
