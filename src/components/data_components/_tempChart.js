@@ -1,7 +1,6 @@
 import React from 'react';
-import { ResponsiveBar, Bar } from '@nivo/bar'
+import { Bar } from '@nivo/bar'
 import AutoSizer from "react-virtualized-auto-sizer";
-
 
 export const TempChart = ({ data }) => (
     <AutoSizer>

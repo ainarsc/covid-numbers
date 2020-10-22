@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
-import {COLOR_PRIMARY, COLOR_TEXT_DARK} from './constants'
+import {COLOR_PRIMARY, COLOR_TEXT_DARK} from '../constants'
 
 const Wrapper = styled.div`
     background-color: ${COLOR_PRIMARY};
@@ -12,7 +12,7 @@ const Wrapper = styled.div`
     color: ${COLOR_TEXT_DARK};
 `
 
-const NavBar = () => {
+const Header = () => {
     return (
         <Wrapper>
             <div>COVID19 2020</div>
@@ -23,4 +23,4 @@ const NavBar = () => {
     );
 }
 
-export default NavBar;
+export default Header;

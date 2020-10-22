@@ -12,7 +12,7 @@ const Item = styled.div`
     margin: 5px;
 `
 
-const Totals = () => {
+const BigFigures = () => {
     return (
         <>
             <Item>CASE COUNT</Item>
@@ -25,4 +25,4 @@ const Totals = () => {
     );
 }
 
-export default Totals;
+export default BigFigures;

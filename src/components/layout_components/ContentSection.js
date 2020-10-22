@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
-import {COLOR_BACKGROUND} from './constants'
-import Totals from './data_components/totals'
-import Rank from './data_components/rank'
-import ChartCol from './data_components/ChartCol'
+import {COLOR_BACKGROUND} from '../constants'
+import {BigFigures, Ranks, ChartCol} from '../data_components'
 
 const Wrapper = styled.div`
     background-color: ${COLOR_BACKGROUND};
@@ -30,10 +28,10 @@ const ContentSection = () => {
     return (
         <Wrapper>
             <TopRow>
-                <Totals country />
+                <BigFigures country />
             </TopRow>
             <BottomRow>
-                <Rank type country />
+                <Ranks type country />
                 <ChartCol topChart bottomChart country />
                 <ChartCol topChart bottomChart country />
             </BottomRow>

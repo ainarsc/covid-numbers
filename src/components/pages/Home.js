@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
-import {COLOR_BACKGROUND, COLOR_TEXT_DARK} from './constants'
-import NavBar from './nav-bar'
-import ContentSection from './content-section'
-import Footer from './footer'
+import {COLOR_BACKGROUND, COLOR_TEXT_DARK} from '../constants'
+import {Header, ContentSection, Footer} from '../layout_components'
 
 const Wrapper = styled.div`
     background-color: ${COLOR_BACKGROUND};
@@ -14,14 +12,14 @@ const Wrapper = styled.div`
     color: ${COLOR_TEXT_DARK};
 `
 
-const Dashboard = () => {
+const Home = () => {
     return (
         <Wrapper>
-            <NavBar/>
+            <Header/>
             <ContentSection />
             <Footer/>
         </Wrapper>
     );
 }
 
-export default Dashboard;
+export default Home;

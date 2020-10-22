@@ -15,7 +15,7 @@ const Item = styled.div`
     width: 100%;
 `
 
-const ContentSection = () => {
+const Ranks = () => {
     return (
         <Wrapper>
             {[...Array(15).map((i) => <Item key={i}>USA: 293 499</Item>)]}
@@ -23,4 +23,4 @@ const ContentSection = () => {
     );
 }
 
-export default ContentSection;
+export default Ranks;

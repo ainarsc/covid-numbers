@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components'
 //Testing
-import {TempChart} from './tempChart'
-import tempData from './tempData.json'
+import {TempChart} from './_tempChart'
+import tempData from './_tempData.json'
 
 
 const Wrapper = styled.div`

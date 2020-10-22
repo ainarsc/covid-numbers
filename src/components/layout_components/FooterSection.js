@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
-import {COLOR_SECONDARY, COLOR_TEXT_DARK} from './constants'
+import {COLOR_SECONDARY, COLOR_TEXT_DARK} from '../constants'
 
 const Wrapper = styled.div`
     background-color: ${COLOR_SECONDARY};
