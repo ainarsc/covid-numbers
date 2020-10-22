@@ -7,14 +7,13 @@ const Wrapper = styled.div`
     justify-content: center;
     align-items: stretch;
     flex: 1;
-    /* width: 96%; */
     margin: 5px;
 `
 
 const Chart = () => {
     return (
         <Wrapper>
-            Chart
+            Chart Content
         </Wrapper>
     );
 }

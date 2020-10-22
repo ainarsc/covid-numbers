@@ -34,8 +34,8 @@ const ContentSection = () => {
             </TopRow>
             <BottomRow>
                 <Rank />
-                <ChartCol />
-                <ChartCol />
+                <ChartCol topChart bottomChart />
+                <ChartCol topChart bottomChart />
             </BottomRow>
         </Wrapper>
     );
