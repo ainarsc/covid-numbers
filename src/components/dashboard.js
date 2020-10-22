@@ -18,8 +18,8 @@ const Dashboard = () => {
     return (
         <Wrapper>
             <NavBar/>
-           <ContentSection />
-           <Footer/>
+            <ContentSection />
+            <Footer/>
         </Wrapper>
     );
 }
