@@ -1,10 +1,13 @@
 import React from 'react';
 import styled from 'styled-components'
+//Testing
+import {TempChart} from './tempChart'
+import tempData from './tempData.json'
+
 
 const Wrapper = styled.div`
     border: 1px solid black;
     display: flex;
-    justify-content: center;
     align-items: stretch;
     flex: 1;
     margin: 5px;
@@ -13,7 +16,7 @@ const Wrapper = styled.div`
 const Chart = () => {
     return (
         <Wrapper>
-            Chart Content
+            <TempChart data={tempData} />
         </Wrapper>
     );
 }

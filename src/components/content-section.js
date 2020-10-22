@@ -30,12 +30,12 @@ const ContentSection = () => {
     return (
         <Wrapper>
             <TopRow>
-                <Totals />
+                <Totals country />
             </TopRow>
             <BottomRow>
-                <Rank />
-                <ChartCol topChart bottomChart />
-                <ChartCol topChart bottomChart />
+                <Rank type country />
+                <ChartCol topChart bottomChart country />
+                <ChartCol topChart bottomChart country />
             </BottomRow>
         </Wrapper>
     );
