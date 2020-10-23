@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 import styled from 'styled-components'
-import {COLOR_PRIMARY, COLOR_TEXT_ALTERNATIVE, COLOR_TEXT_LIGHT} from '../constants'
+import {COLOR_ALTERNATIVE, COLOR_PRIMARY, COLOR_TEXT_ALTERNATIVE, COLOR_TEXT_LIGHT} from '../constants'
 
 export default () => {
     const BRAND = 'COVID19 2020',
@@ -63,8 +63,8 @@ const ListItem = styled.li`
     cursor: pointer;
 
     &:hover {
-      color: #fdcb6e;
-      border-bottom: 2px solid #fdcb6e;
+      color: ${COLOR_ALTERNATIVE};
+      border-bottom: 2px solid ${COLOR_ALTERNATIVE};
     }
 
   }
