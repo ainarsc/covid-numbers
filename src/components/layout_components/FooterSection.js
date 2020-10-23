@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
-import {COLOR_SECONDARY, COLOR_TEXT_DARK} from '../constants'
+import {COLOR_SECONDARY, COLOR_TEXT_LIGHT} from '../constants'
 
 const Wrapper = styled.div`
     background-color: ${COLOR_SECONDARY};
@@ -13,7 +13,7 @@ const Wrapper = styled.div`
 `
 const Text = styled.p`
     font-size: 10;
-    color: ${COLOR_TEXT_DARK};
+    color: ${COLOR_TEXT_LIGHT};
 
 `
 const Footer = () => {

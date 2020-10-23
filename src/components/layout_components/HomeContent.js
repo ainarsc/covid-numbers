@@ -9,6 +9,8 @@ const Wrapper = styled.div`
     flex: 1;
     flex-direction: column;
     margin: 5px;
+    height: 100%;
+    overflow: hidden;
 `
 const TopRow = styled.div`
     display: flex;
@@ -22,6 +24,8 @@ const BottomRow = styled.div`
     order: 2;
     flex-direction: row;
     flex: 8;
+    overflow: hidden;
+    
 `
 
 const HomeContent = () => {

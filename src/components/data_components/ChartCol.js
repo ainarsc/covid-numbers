@@ -5,7 +5,7 @@ import Chart from './Chart'
 const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
-    flex: 5;
+    flex: 4;
     justify-content: space-between;
 `
 

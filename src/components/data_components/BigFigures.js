@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
-import { COLOR_ALTERNATIVE, COLOR_TEXT_ALTERNATIVE_2, COLOR_TEXT_DARK } from '../constants';
+import { COLOR_TEXT_ALTERNATIVE_2, COLOR_TEXT_DARK } from '../constants';
 
 
 export default () => {
