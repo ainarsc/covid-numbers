@@ -28,8 +28,8 @@ const LargeMap = ({data, country}) => {
                         unknownColor="#101b42"
                         label="properties.name"
                         valueFormat=".2s"
-                        projectionScale={160}
-                        projectionTranslation={[ 0.5, 0.6 ]}
+                        projectionScale={180}
+                        projectionTranslation={[ 0.5, 0.57 ]}
                         projectionRotation={[ 0, 0, 0 ]}
                         graticuleLineColor="rgba(0, 0, 0, .2)"
                         borderWidth={0.5}
