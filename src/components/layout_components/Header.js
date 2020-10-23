@@ -9,22 +9,21 @@ export default () => {
      NAV_ITEM_2 = 'MAP',
      NAV_ITEM_3 = 'IN DEPTH',
      LINK_1 = '/',
-     LINK_2 = 'map',
+     LINK_2 = '/map',
      LINK_3 = '/in-depth'
-
 
     return (
         <Wrapper>
             <Brand>{BRAND}</Brand> 
             <StyledList>
                 <ListItem>
-                    <StyledLink to={LINK_1}>{NAV_ITEM_1}</StyledLink>
+                    <StyledLink exact activeClassName="active" to={LINK_1}>{NAV_ITEM_1}</StyledLink>
                 </ListItem>
                 <ListItem>
-                    <StyledLink to={LINK_2}>{NAV_ITEM_2}</StyledLink>
+                    <StyledLink activeClassName="active" to={LINK_2}>{NAV_ITEM_2}</StyledLink>
                 </ListItem>
                 <ListItem>
-                    <StyledLink to={LINK_3}>{NAV_ITEM_3}</StyledLink>
+                    <StyledLink activeClassName="active" to={LINK_3}>{NAV_ITEM_3}</StyledLink>
                 </ListItem>
             </StyledList>
         </Wrapper>
@@ -53,19 +52,24 @@ const ListItem = styled.li`
     justify-content: center;
     flex: 1;
     & a {
-    color: #dfe6e9;
-    text-transform: uppercase;
-    font-weight: 600;
-    border-bottom: 2px solid transparent;
-    margin: 0 1.5rem;
-    transition: all 300ms linear 0s;
-    text-decoration: none;
-    cursor: pointer;
-
+        color: #dfe6e9;
+        text-transform: uppercase;
+        font-weight: 600;
+        border-bottom: 2px solid transparent;
+        margin: 0 1.5rem;
+        transition: all 300ms linear 0s;
+        text-decoration: none;
+        cursor: pointer;
+        &.active {
+        color: ${COLOR_ALTERNATIVE};
+        border-bottom: 2px solid ${COLOR_ALTERNATIVE};
+    }
     &:hover {
       color: ${COLOR_ALTERNATIVE};
       border-bottom: 2px solid ${COLOR_ALTERNATIVE};
     }
+
+    
 
   }
     
@@ -76,6 +80,8 @@ const StyledLink = styled(NavLink)`
     font-weight: 600;
     padding: 5px;
     width: 100%;
+
+    
 
 `
 const Brand = styled.div`
