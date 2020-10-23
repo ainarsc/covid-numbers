@@ -24,7 +24,7 @@ const BottomRow = styled.div`
     flex: 8;
 `
 
-const ContentSection = () => {
+const HomeContent = () => {
     return (
         <Wrapper>
             <TopRow>
@@ -39,4 +39,4 @@ const ContentSection = () => {
     );
 }
 
-export default ContentSection;
+export default HomeContent;

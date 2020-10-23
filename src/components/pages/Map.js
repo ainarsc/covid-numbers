@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 import {COLOR_BACKGROUND, COLOR_TEXT_DARK} from '../constants'
-import {Header, HomeContent, Footer} from '../layout_components'
+import {Header, MapContent, Footer} from '../layout_components'
 
 const Wrapper = styled.div`
     background-color: ${COLOR_BACKGROUND};
@@ -12,14 +12,14 @@ const Wrapper = styled.div`
     color: ${COLOR_TEXT_DARK};
 `
 
-const Home = () => {
+const Map = () => {
     return (
         <Wrapper>
             <Header/>
-            <HomeContent />
+            <MapContent />
             <Footer/>
         </Wrapper>
     );
 }
 
-export default Home;
+export default Map;
