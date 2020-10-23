@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 import styled from 'styled-components'
-import {COLOR_PRIMARY, COLOR_TEXT_LIGHT} from '../constants'
+import {COLOR_PRIMARY, COLOR_TEXT_ALTERNATIVE, COLOR_TEXT_LIGHT} from '../constants'
 
 export default () => {
     const BRAND = 'COVID19 2020',
@@ -46,28 +46,37 @@ const StyledList = styled.ul`
     flex: 2;
     text-align: center;
     list-style: none; 
+
 `
 const ListItem = styled.li`
     display: flex;
-    align-items: stretch;
     justify-content: center;
     flex: 1;
+    & a {
+    color: #dfe6e9;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    margin: 0 1.5rem;
+    transition: all 300ms linear 0s;
+    text-decoration: none;
+    cursor: pointer;
+
     &:hover {
-        background-color:#000;
-        opacity:0.3;
+      color: #fdcb6e;
+      border-bottom: 2px solid #fdcb6e;
     }
+
+  }
+    
 `
 const StyledLink = styled(NavLink)`
     color: ${COLOR_TEXT_LIGHT};
     text-decoration: none;
     font-weight: 600;
-    padding: 10px;
+    padding: 5px;
     width: 100%;
-    &:active {
-        text-decoration: none;
-        background-color:#000;
-        opacity:0.3;
-    }
+
 `
 const Brand = styled.div`
     display: flex;
@@ -75,5 +84,8 @@ const Brand = styled.div`
     justify-content: flex-start;
     padding-left: 20px;
     flex: 2;
+    color: ${COLOR_TEXT_ALTERNATIVE};
+    font-weight: 700;
+    letter-spacing: 1.6px;
 `
 
