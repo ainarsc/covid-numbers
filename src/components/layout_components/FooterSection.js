@@ -9,15 +9,19 @@ const Wrapper = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    color: ${COLOR_TEXT_DARK};
+    
 `
+const Text = styled.p`
+    font-size: 10;
+    color: ${COLOR_TEXT_DARK};
 
+`
 const Footer = () => {
     return (
         <Wrapper>
-            <div>COPYRIGHT 2020</div>
-            <div>ABOUT</div>
-            <div>DEVELOPED BY AINARS CIESA</div>
+            <div><Text>COPYRIGHT 2020</Text></div>
+            <div><Text>ABOUT</Text></div>
+            <div><Text>DEVELOPED BY AINARS CIESA</Text></div>
         </Wrapper>
     );
 }
