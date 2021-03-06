@@ -1,30 +1,49 @@
 import React from 'react';
 import styled from 'styled-components'
 import { COLOR_TEXT_ALTERNATIVE_2, COLOR_TEXT_DARK } from '../constants';
+import axios from 'axios';
+import {useState, useEffect} from 'react';
 
 
 export default () => {
+    const [data, setData] = useState({})
+    useEffect( () => {
+        const fetchData = async () => {
+            try {
+                let result = await axios.get('https://corona.lmao.ninja/v2/all?yesterday')
+                console.log(result.data)
+                setData(result.data)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        fetchData();
+    }, []);
+
+    const formatNumber = (n) => {
+        return new Intl.NumberFormat('en-US').format(n);
+    }
     return (
         <>
             <Item>
                 <Title>CASE COUNT</Title>
-                <Number>3.400.4455</Number>
+                <Number>{formatNumber(data.cases)}</Number>
             </Item>
             <Item>
                 <Title>ACTIVE CASES</Title>
-                <Number>443.443</Number>
+                <Number>{formatNumber(data.active)}</Number>
             </Item>
             <Item>
                 <Title>RECOVERED</Title>
-                <Number>2.934.334</Number>
+                <Number>{formatNumber(data.recovered)}</Number>
             </Item>
             <Item>
                 <Title>DEATHS</Title>
-                <Number>1.203.333</Number>
+                <Number>{formatNumber(data.deaths)}</Number>
             </Item>
             <Item>
                 <Title>HOSPITALIZED</Title>
-                <Number>44.534</Number>
+                <Number>{formatNumber(data.critical)}</Number>
             </Item>
         </>
     );
