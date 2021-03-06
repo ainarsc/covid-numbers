@@ -1,25 +1,47 @@
 import React from 'react';
 import styled from 'styled-components'
 import {COLOR_PRIMARY, COLOR_TEXT_ALTERNATIVE_2, COLOR_TEXT_DARK} from '../constants';
+import axios from 'axios'
+import {useState, useEffect} from 'react'
+import {uid} from 'uid';
 
 export default () => {
-    const arr = [...Array(30)]
+    const [data, setData] = useState({})
+    const [isFetched, setFetched] = useState(false)
+    useEffect( () => {
+        const fetchData = async () => {
+            try {
+                let result = await axios.get('https://corona.lmao.ninja/v2/countries?yesterday&sort=cases')
+                setData(result.data)
+                setFetched(true)
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        fetchData();
+    }, [isFetched]);
+
+    const formatNumber = (n) => {
+        return new Intl.NumberFormat('en-US').format(n);
+    }
+
     return (
         <Wrapper>
             <Title>Most Cases</Title>
             <Content>
-                {arr.map((i) => {
+                {!isFetched ? "loading" : data.map((country) => {
                     return (
-                        <Item key={i}>
+                        <Item key={uid()}>
                             <Country>
-                                Argentina
+                                {country.country}
                             </Country>
                             <Number>
-                                244 589
+                                {formatNumber(country.cases)}
                             </Number>
                         </Item>
                     )
                 })}
+               
             </Content>
         </Wrapper>
     );
