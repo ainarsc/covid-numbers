@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components'
 //Testing
-import {TempChart} from './_tempChart'
-import tempData from './_tempData.json'
+import {LineChart} from './lineChart'
+import lineChartData from './lineChartData.json'
 
 
 const Wrapper = styled.div`
@@ -16,7 +16,7 @@ const Wrapper = styled.div`
 const Chart = () => {
     return (
         <Wrapper>
-            <TempChart data={tempData} />
+            <LineChart data={lineChartData} />
         </Wrapper>
     );
 }
