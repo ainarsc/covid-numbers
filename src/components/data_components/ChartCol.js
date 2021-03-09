@@ -5,14 +5,13 @@ import Chart from './Chart'
 const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
-    flex: 4;
+    flex: 8;
     justify-content: space-between;
 `
 
 const Charts = () => {
     return (
         <Wrapper>
-            <Chart />
             <Chart />
         </Wrapper>
     );

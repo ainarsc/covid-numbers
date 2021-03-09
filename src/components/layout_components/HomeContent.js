@@ -37,7 +37,6 @@ const HomeContent = () => {
             <BottomRow>
                 <Ranks type country />
                 <ChartCol topChart bottomChart country />
-                <ChartCol topChart bottomChart country />
             </BottomRow>
         </Wrapper>
     );
