@@ -2,12 +2,6 @@ import React from 'react';
 import styled from 'styled-components'
 import Chart from './Chart'
 
-const Wrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    flex: 8;
-    justify-content: space-between;
-`
 
 const Charts = () => {
     return (
@@ -16,5 +10,12 @@ const Charts = () => {
         </Wrapper>
     );
 }
+
+const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    flex: 8;
+    justify-content: space-between;
+`
 
 export default Charts;

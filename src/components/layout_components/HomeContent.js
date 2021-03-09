@@ -3,6 +3,21 @@ import styled from 'styled-components'
 import {COLOR_BACKGROUND} from '../constants'
 import {BigFigures, Ranks, ChartCol} from '../data_components'
 
+
+const HomeContent = () => {
+    return (
+        <Wrapper>
+            <TopRow>
+                <BigFigures country />
+            </TopRow>
+            <BottomRow>
+                <Ranks type country />
+                <ChartCol topChart bottomChart country />
+            </BottomRow>
+        </Wrapper>
+    );
+}
+
 const Wrapper = styled.div`
     background-color: ${COLOR_BACKGROUND};
     display: flex;
@@ -27,19 +42,5 @@ const BottomRow = styled.div`
     overflow: hidden;
     
 `
-
-const HomeContent = () => {
-    return (
-        <Wrapper>
-            <TopRow>
-                <BigFigures country />
-            </TopRow>
-            <BottomRow>
-                <Ranks type country />
-                <ChartCol topChart bottomChart country />
-            </BottomRow>
-        </Wrapper>
-    );
-}
 
 export default HomeContent;
