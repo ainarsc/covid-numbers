@@ -5,7 +5,6 @@ import styled from 'styled-components'
 //Testing
 import {LineChart} from './lineChart'
 import forEach from 'lodash/forEach';
-import _ from 'lodash';
 
 // import lineChartData from './lineChartData.json'
 
@@ -71,15 +70,13 @@ const Chart = () => {
         //set array in useState
 
         let sorted = [];
-        _.forEach(d, (value, key) => {
+        forEach(d, (value, key) => {
             let category = {id: key, color: "hsl(247, 70%, 50%)", data: []}
-            _.forEach(value, (number, date) => {
+            forEach(value, (number, date) => {
                 category.data.push({x: date, y: number})
             })
             sorted.push(category)
         })
-
-
 
         return sorted
     }
