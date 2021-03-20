@@ -4,6 +4,9 @@ import axios from 'axios'
 import styled from 'styled-components'
 //Testing
 import {LineChart} from './lineChart'
+import forEach from 'lodash/forEach';
+import _ from 'lodash';
+
 // import lineChartData from './lineChartData.json'
 
 
@@ -56,6 +59,30 @@ const Chart = () => {
         }
         fetchData();
     }, [isFetched]);
+
+    const sortData = (d) => {
+        //{"cases": {date: number}, "deaths": {date: number}}
+        //forEach in result
+        //create object of type
+        //forEach in type
+        //add to data obj x, y
+        //add data obj to obj of type
+        //add it to array 
+        //set array in useState
+
+        let sorted = [];
+        _.forEach(d, (value, key) => {
+            let category = {id: key, color: "hsl(247, 70%, 50%)", data: []}
+            _.forEach(value, (number, date) => {
+                category.data.push({x: date, y: number})
+            })
+            sorted.push(category)
+        })
+
+
+
+        return sorted
+    }
 
     return (
         <Wrapper>
