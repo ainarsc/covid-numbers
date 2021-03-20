@@ -6,51 +6,16 @@ import styled from 'styled-components'
 import {LineChart} from './lineChart'
 import forEach from 'lodash/forEach';
 
-// import lineChartData from './lineChartData.json'
-
-
 const Chart = () => {
-    const [data, setData] = useState(
-        [
-            {
-                id: "cases",
-                color: "hsl(247, 70%, 50%)",
-                data: [
-                    {
-                        x: "",
-                        y: ""
-                    }
-                    ]
-            },
-            {
-                id: "deaths",
-                color: "hsl(194, 70%, 50%)",
-                data: [
-                    {
-                        x: "",
-                        y: ""
-                    }
-                    ]
-            },
-            {
-                id: "recovered",
-                color: "hsl(289, 70%, 50%)",
-                data: [
-                    {
-                        x: "",
-                        y: ""
-                    }
-                    ]
-            }
-        ]
-    )
+    const [data, setData] = useState()
     const [isFetched, setState] = useState(false)
 
     useEffect( () => {
         const fetchData = async () => {
             try {
                 let result = await axios.get('https://corona.lmao.ninja/v2/historical/All?lastdays=90')
-                setData(result.data)
+                const sorted= sortData(result.data)
+                setData(sorted)
                 setState(true)
             } catch (error) {
                 console.log(error)
@@ -76,6 +41,7 @@ const Chart = () => {
                 category.data.push({x: date, y: number})
             })
             sorted.push(category)
+            console.log(category)
         })
 
         return sorted
