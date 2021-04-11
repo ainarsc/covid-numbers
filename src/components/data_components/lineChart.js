@@ -18,8 +18,14 @@ export const LineChart = ({ data /* see data tab */ }) => (
             width={width}
         data={data}
         margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
-        xScale={{ type: 'point' }}
-        yScale={{ type: 'linear', min: 'auto', max: 'auto', stacked: true, reverse: false }}
+        xScale={{ 
+            type: 'time',
+            format: '%Y-%m-%d',
+            useUTC: false,
+            precision: 'day', }}
+        xFormat="time:%Y-%m-%d"
+        yScale={{ type: 'linear', min: 'auto', max: 'auto', stacked: false, reverse: false }}
+        // xFormat="time:%Y-%m-%d"
         yFormat=" >-.2f"
         axisTop={null}
         axisRight={null}
@@ -41,7 +47,7 @@ export const LineChart = ({ data /* see data tab */ }) => (
             legendOffset: -40,
             legendPosition: 'middle'
         }}
-        pointSize={10}
+        pointSize={1}
         pointColor={{ theme: 'background' }}
         pointBorderWidth={2}
         pointBorderColor={{ from: 'serieColor' }}

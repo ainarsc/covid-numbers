@@ -8,10 +8,10 @@ const HomeContent = () => {
     return (
         <Wrapper>
             <TopRow>
-                <BigFigures country />
+                {/* <BigFigures country /> */}
             </TopRow>
             <BottomRow>
-                <Ranks type country />
+                {/* <Ranks type country /> */}
                 <ChartCol topChart bottomChart country />
             </BottomRow>
         </Wrapper>

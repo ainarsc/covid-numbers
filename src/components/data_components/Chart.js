@@ -5,51 +5,95 @@ import styled from 'styled-components'
 //Testing
 import {LineChart} from './lineChart'
 import forEach from 'lodash/forEach';
+import lineChartData from './lineChartData.json'
 
 const Chart = () => {
     const [data, setData] = useState()
-    const [isFetched, setState] = useState(false)
-
-    useEffect( () => {
-        const fetchData = async () => {
-            try {
-                let result = await axios.get('https://corona.lmao.ninja/v2/historical/All?lastdays=90')
-                const sorted= sortData(result.data)
-                setData(sorted)
-                setState(true)
-            } catch (error) {
-                console.log(error)
+    const [isLoaded, setStatus] = useState(false)
+    
+    useEffect(() => {
+        const sortData = (unsorted) => {
+            let sorted = []
+            const sort = () => {
+                forEach(unsorted, (group, key) => {
+                    const groupData = {id: key, color: "hsl(247, 70%, 50%)", data: []}
+                    forEach(group, (number, date) => {
+                        groupData.data.push({x: formatNumber(date), y: number})
+                    })
+                    sorted.push(groupData)
+                    
+                })
             }
+            sort()
+            return sorted
         }
-        fetchData();
-    }, [isFetched]);
+        const formatNumber = (number) => {
+            //input number = MM/DD/YY
+            //result number = YYYY-DD-MM
+            const milliseconds = Date.parse(number)
+            const date = new Date(milliseconds)
+            let month = (date.getMonth() + 1).toString(),
+                day = date.getDate().toString(),
+                year = date.getFullYear().toString();
+    
+            if (month.length < 2) 
+                month = '0' + month;
+            if (day.length < 2)
+                day = '0' + day;
+            
+            return [year, month, day].join('-');
+        }
+        setData(() => sortData(lineChartData))
+        setStatus(true)
+        console.log(data)
+    }, [isLoaded])
+    // useEffect( () => {
+    //     // const sortData = (unsorted) => {
+    //     //     const sorted = []
+    //     //     const sort = () => {
+    //     //         forEach(unsorted, (group, key) => {
+    //     //             const groupData = {id: key, color: "hsl(247, 70%, 50%)", data: []}
+    //     //             forEach(group, (number, date) => {
+    //     //                 groupData.data.push({x: formatNumber(date), y: number})
+    //     //             })
+    //     //             sorted.push(groupData)
+                    
+    //     //         })
+    //     //     }
+    //     //     sort()
+    //     //     console.log(sorted)
+    //     //     return sorted
+    //     // }
+    //     // const fetchData = async () => {
+    //     //     try {
+    //     //         const result = await axios.get('https://corona.lmao.ninja/v2/historical/All?lastdays=90')
+    //     //         setData(() => sortData(result.data))
+    //     //         setStatus(true)
+    //     //     } catch (error) {
+    //     //         console.log(error)
+    //     //     }
+    //     // }
+    //     const formatNumber = (number) => {
+    //         //input number = MM/DD/YY
+    //         //result number = YYYY-DD-MM
+    //         const YEAR = `20${number.substr(5, 2)}`
+    //         const DD = number.substr(2, 2).length < 2 ? `0${number.substr(2, 2)}` : number.substr(2, 2)
+    //         const MM = number.substr(0, 2).length < 2 ? `0${number.substr(0, 2)}` : number.substr(0, 2)
 
-    const sortData = (d) => {
-        //{"cases": {date: number}, "deaths": {date: number}}
-        //forEach in result
-        //create object of type
-        //forEach in type
-        //add to data obj x, y
-        //add data obj to obj of type
-        //add it to array 
-        //set array in useState
 
-        let sorted = [];
-        forEach(d, (value, key) => {
-            let category = {id: key, color: "hsl(247, 70%, 50%)", data: []}
-            forEach(value, (number, date) => {
-                category.data.push({x: date, y: number})
-            })
-            sorted.push(category)
-            console.log(category)
-        })
 
-        return sorted
-    }
+    //         console.log(Date.parse(number))
+    //         return `${YEAR}-${DD}-${MM}`
+    //     }
+    //     // fetchData();
+        
+    // }, [isLoaded]);
+
+
 
     return (
         <Wrapper>
-            {!isFetched ? "loading" : <LineChart data={data}/>}
+            {isLoaded === false ? "LOADING" : <LineChart data={data}/>}
         </Wrapper>
     );
 }
